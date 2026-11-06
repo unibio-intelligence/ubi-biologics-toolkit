@@ -54,6 +54,7 @@ in the OS keyring. If your shell cannot find `ubi-biologics-cli`, run
 Project access requires the next step as well.
 
 In the **same Ubi account**, open [AI connections](https://biologics.unibiointelligence.com/agent-studio).
+Select the **Organization that owns your Project** before configuring access.
 Use or create a connection with these initial read-only settings:
 
 | Setting | Value |
@@ -86,7 +87,8 @@ the CLI's interactive browser login, and the CLI AI connection above does not
 issue an SDK credential.
 
 Use an existing, caller-owned REST credential or ask your Organization owner or
-administrator to issue one in **Agent Studio → Identity & credentials**. For the
+administrator to issue one in **Agent Studio → Identity & credentials**, with
+the Organization that owns your Project selected. For the
 first examples, restrict it to your chosen Project and `projects:read`, remove
 unneeded default scopes and use a short expiry. Keep the issued secret in your
 normal secret manager and provide it to your process as `UBI_BIOLOGICS_TOKEN`.
@@ -204,9 +206,30 @@ and building a tarball from source.
 | Symptom | What to check |
 | --- | --- |
 | CLI `login_required` | Run `ubi-biologics-cli login` and finish the browser flow. |
-| CLI `agent_grant_required` or `agent_grant_expired` | Check the saved AI connection's account, exact client ID, Project, actions and expiry. |
+| CLI `agent_grant_required` or `agent_grant_expired` | Check the saved AI connection's account, Organization, exact client ID, Project, actions and expiry. If a correct, active grant still fails, reconnect as described below. |
 | SDK HTTP 401 | Check that the product REST credential is present and unexpired. |
 | SDK HTTP 403 or 404 | Check the Project ID, credential scope and Project access with your administrator. |
+
+If an active connection still returns an old grant error, choose the intended
+account in the browser and reconnect, then retry the two CLI reads:
+
+```bash
+ubi-biologics-cli logout --forget-local
+ubi-biologics-cli login
+ubi-biologics-cli doctor
+```
+
+`--forget-local` clears this CLI's local saved login without revoking server-side
+connections. This reconnect was necessary during the November 6, 2026 clean-install
+check; `doctor` alone did not detect the stale grant binding.
+
+The CLI, Python and TypeScript first reads above passed against the live platform
+on November 6, 2026, using fresh package environments and caches on macOS, existing
+Git/uv/Node prerequisites, and temporary read-only access to one Project. Browser
+sign-in used existing SSO. Both SDK examples returned the same Project; the test
+grant and credential were revoked afterward. No scientific Jobs were submitted
+or credits spent. This check does not qualify Windows/Linux installation or
+scientific execution workflows.
 
 The [scientific workflow tutorial](docs/hosted-workflow.md) explains previews,
 pricing, explicit execution approval, stable retry keys and resuming Jobs.
