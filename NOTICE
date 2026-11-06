@@ -1,0 +1,15 @@
+Ubi Biologics Toolkit
+Copyright 2026 UniBio Intelligence
+
+UniBio Intelligence-authored clients in this distribution are licensed under
+Apache-2.0. Separately installed dependencies retain their own licenses.
+The software license does not grant trademark rights or imply endorsement.
+
+SDK modules/types are generated with openapi-python-client and openapi-typescript
+from selected public UniBio Intelligence API contracts. Native client OAuth,
+error contracts and scientific workflow helpers originate in private source
+owners; selected source hashes and adaptations are recorded in SOURCE_MANIFEST.json.
+
+No scientific model bundle, paper assets, private data, platform server,
+authorization proxy, accounting implementation or managed worker is included.
+The maintained standalone scientific engine and model library belong to QSPQuest.

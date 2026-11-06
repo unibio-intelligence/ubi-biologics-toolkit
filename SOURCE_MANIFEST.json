@@ -1,0 +1,113 @@
+{
+  "adaptations": [
+    "CLI: selected remote native client only; no local platform, server authorization proxy, accounting or worker code.",
+    "Client errors and JSON budgets: selected standalone modules, package-relative imports.",
+    "Client error operation field omitted: private telemetry operation registry is not bundled; untrusted names are never echoed.",
+    "CLI transport: standalone bounded MCP result decoding and safe diagnostics in transport.py.",
+    "CLI inputs: reject overflowed nonfinite numeric values; report package version.",
+    "Toolkit names: ubi-biologics-cli command/distribution; preserve hosted ubi-cli-client.json OAuth identity and Python import modules.",
+    "CLI tests: retain client-side OAuth and input cases; exclude server-only tests and imports.",
+    "Native OAuth callback branding: standalone presentation middleware and bundled logo; no server auth or shared runtime dependency.",
+    "Named MCP tools discovered from the authenticated remote catalog; no server inventory or retired generic executors.",
+    "OpenAPI: explicit scientific-workflow routes and transitive component closure.",
+    "SDK helpers: package-relative generated schema import and test setup.",
+    "Scientific models and numerical fixtures: excluded; maintained by QSPQuest."
+  ],
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "path": "ubi-server/ubi_server/cli.py",
+      "repository": "ubi-mcp-server",
+      "sha256": "4b6051880aa513cd911534b91657e761083bd20820638125afa77bcf519c55c0"
+    },
+    {
+      "path": "ubi-server/ubi_server/cli_auth.py",
+      "repository": "ubi-mcp-server",
+      "sha256": "03f03af5f9075f2494d0a584a36e628427acdf3cd1dffad83175c024a6aec1b4"
+    },
+    {
+      "path": "ubi-server/ubi_server/cli_client.py",
+      "repository": "ubi-mcp-server",
+      "sha256": "0e9839b11491418d2dae94c0120ffeb0fe0c61708f269f609f01a9ec707906dc"
+    },
+    {
+      "path": "packages/ubi-mcp-common/src/ubi_mcp_common/auth.py",
+      "repository": "ubi-mcp-server",
+      "sha256": "0225a50942ae39270b11e24ffe2a50cfaa7ebe48eee86d2cdd28ccbc27d2f70b"
+    },
+    {
+      "path": "packages/ubi-mcp-common/src/ubi_mcp_common/auth_branding.py",
+      "repository": "ubi-mcp-server",
+      "sha256": "ae15df63ed78dd1d7d5c4099821ec67721ccf93a22516e8332dc8d5af85ac37a"
+    },
+    {
+      "path": "packages/ubi-mcp-common/src/ubi_mcp_common/assets/ubi-logo.png",
+      "repository": "ubi-mcp-server",
+      "sha256": "7224dfc1b79413bedb51b785fc3d72341c88a9adc0c385173323924ec06b1abc"
+    },
+    {
+      "path": "packages/ubi-mcp-common/src/ubi_mcp_common/errors.py",
+      "repository": "ubi-mcp-server",
+      "sha256": "41beddaac68ac7ec304fabe0352c3bc696c5809bb92986d76979fc3d4868c663"
+    },
+    {
+      "path": "packages/ubi-mcp-common/src/ubi_mcp_common/error_catalog.py",
+      "repository": "ubi-mcp-server",
+      "sha256": "01b3d51085820ed49ce2ab77bb923c3e804cbc3983cb14732c3725761b3aa07d"
+    },
+    {
+      "path": "packages/ubi-mcp-common/src/ubi_mcp_common/limits.py",
+      "repository": "ubi-mcp-server",
+      "sha256": "8e2a9b2e4529790b77cc4b00fa866fa364a6aced1fc802f362b7c3766839f21d"
+    },
+    {
+      "path": "packages/ubi-mcp-common/src/ubi_mcp_common/diagnostics.py",
+      "repository": "ubi-mcp-server",
+      "sha256": "ee31fe8de5d51fca85f7cbd4af5a5de4b416ab6b26386d0cddfdd75aca67a0d2"
+    },
+    {
+      "path": "ubi-server/tests/test_cli_auth.py",
+      "repository": "ubi-mcp-server",
+      "sha256": "ad56d065872c8f07c8bf359e70d51f9f80278700fb103784762028dc4f17dba3"
+    },
+    {
+      "path": "ubi-server/tests/test_cli_input.py",
+      "repository": "ubi-mcp-server",
+      "sha256": "8e093677c013b34275a8d9464b390d252a9ecc68f6a29039b88b0921e7c98ca7"
+    },
+    {
+      "path": "/api/openapi.json",
+      "repository": "ubi-biologics-hosted",
+      "sha256": "330a625aa3e3456b9540744ba224ead6d75c85f9b2673156a3b6d1d5dcc5862a"
+    },
+    {
+      "path": "sdk/python/ubi_biologics_workflows/__init__.py",
+      "repository": "ubi-biologics",
+      "sha256": "8f6f3570e431df3b9c4527deb65b87093b0006e09ee16e922f4cd15404445eda"
+    },
+    {
+      "path": "sdk/python/ubi_biologics_workflows/scientific_runs.py",
+      "repository": "ubi-biologics",
+      "sha256": "7ce626f5de077261a5ead69fd3b36524350e82e13fc67d8da66d34719d310cbc"
+    },
+    {
+      "path": "backend/tests/test_python_sdk_scientific_runs.py",
+      "repository": "ubi-biologics",
+      "sha256": "d6f4fc0cea8c2a6ab5310bc794394c699f9c28baf78b0a87153e6f34518d7b0d"
+    },
+    {
+      "path": "sdk/typescript/scientific-runs.ts",
+      "repository": "ubi-biologics",
+      "sha256": "f691440fa9f263369501340f587a00132824f75a560cc71d913a7666952e25c0"
+    },
+    {
+      "path": "sdk/typescript/scientific-runs.test.ts",
+      "repository": "ubi-biologics",
+      "sha256": "5aa564383d4b80a4e1f2bc9616653e3f18b684937517dd27fff52c89ca05c753"
+    }
+  ],
+  "upstream_revisions": {
+    "ubi-biologics": "809c550a7bb597a704d0457573a7d78e2d95bbfd",
+    "ubi-mcp-server": "66a4c0e227eb7650f5ee612c4b3140cd48270a5c"
+  }
+}

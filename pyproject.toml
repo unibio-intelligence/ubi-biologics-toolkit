@@ -1,0 +1,10 @@
+[tool.uv.workspace]
+members = ["packages/ubi-biologics-cli", "packages/ubi-biologics-python"]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "pytest-asyncio>=1,<2", "jsonschema>=4.23,<5", "build>=1.2,<2", "openapi-python-client==0.29.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "packages/ubi-biologics-cli/tests", "packages/ubi-biologics-python/tests"]
+addopts = "-ra --import-mode=importlib"
+asyncio_mode = "auto"

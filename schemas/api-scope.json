@@ -1,0 +1,81 @@
+{
+  "/api/v1/artifacts": [
+    "get"
+  ],
+  "/api/v1/artifacts/{artifact_id}": [
+    "get"
+  ],
+  "/api/v1/artifacts/{artifact_id}/content": [
+    "get"
+  ],
+  "/api/v1/assets": [
+    "get"
+  ],
+  "/api/v1/assets/{asset_id}": [
+    "get"
+  ],
+  "/api/v1/capabilities": [
+    "get"
+  ],
+  "/api/v1/capabilities/{capability_id}": [
+    "get"
+  ],
+  "/api/v1/dataset-versions/{version_id}": [
+    "get"
+  ],
+  "/api/v1/dataset-versions/{version_id}/query": [
+    "post"
+  ],
+  "/api/v1/datasets": [
+    "get"
+  ],
+  "/api/v1/datasets/{dataset_id}": [
+    "get"
+  ],
+  "/api/v1/datasets/{dataset_id}/versions": [
+    "get",
+    "post"
+  ],
+  "/api/v1/jobs": [
+    "get"
+  ],
+  "/api/v1/jobs/{job_id}": [
+    "get"
+  ],
+  "/api/v1/jobs/{job_id}/cancel": [
+    "post"
+  ],
+  "/api/v1/jobs/{job_id}/detail": [
+    "get"
+  ],
+  "/api/v1/jobs/{job_id}/events": [
+    "get"
+  ],
+  "/api/v1/jobs/{job_id}/events/stream": [
+    "get"
+  ],
+  "/api/v1/projects": [
+    "get",
+    "post"
+  ],
+  "/api/v1/projects/default": [
+    "post"
+  ],
+  "/api/v1/projects/{project_id}": [
+    "get",
+    "patch"
+  ],
+  "/api/v1/runs": [
+    "get",
+    "post"
+  ],
+  "/api/v1/runs/preview": [
+    "post"
+  ],
+  "/api/v1/runs/{run_id}": [
+    "get"
+  ],
+  "/api/v1/whoami": [
+    "get"
+  ]
+}

@@ -1,0 +1,27 @@
+name: Ubi Biologics Toolkit
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: uv sync --frozen --all-packages --group dev
+      - run: npm ci --ignore-scripts
+      - run: npm --prefix packages/ubi-biologics-typescript ci --ignore-scripts
+      - run: uv run python scripts/generate-clients.py
+      - run: git diff --exit-code
+      - run: uv run pytest
+      - run: npm --prefix packages/ubi-biologics-typescript test
+      - run: npm --prefix packages/ubi-biologics-typescript run build
+      - run: uv build --package ubi-biologics-cli
+      - run: uv build --package ubi-biologics-python
+      - run: npm pack --pack-destination /tmp
+        working-directory: packages/ubi-biologics-typescript

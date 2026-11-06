@@ -1,0 +1,5 @@
+{
+  "name": "ubi-biologics-toolkit-build",
+  "private": true,
+  "devDependencies": {"openapi-typescript": "7.13.0"}
+}

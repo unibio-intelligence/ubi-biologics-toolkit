@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Please cite this software when using the Ubi Biologics clients."
+type: software
+title: "Ubi Biologics Toolkit"
+version: "0.1.0-alpha.1"
+authors:
+  - name: "UniBio Intelligence"
+license: Apache-2.0
+repository-code: "https://github.com/unibio-intelligence/ubi-biologics-toolkit"

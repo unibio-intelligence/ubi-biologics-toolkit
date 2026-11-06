@@ -1,0 +1,38 @@
+name: Bug report
+description: Report an installation, client, CLI, or execution problem.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "Remove tokens, private data, and customer identifiers. Report vulnerabilities through SECURITY.md."
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - Python SDK
+        - TypeScript SDK
+        - Ubi Biologics CLI
+        - Documentation or packaging
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Package version
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python or Node version, and installation method.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Include public inputs, the command or code, expected behavior, and actual behavior.
+    validations:
+      required: true
